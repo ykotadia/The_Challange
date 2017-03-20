@@ -1,4 +1,4 @@
-of # The_Challange_DataOne_Innovation_Labs
+# The_Challange_DataOne_Innovation_Labs
 
 
 # How to Run CSVtoArrayList.java?
