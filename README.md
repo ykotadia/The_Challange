@@ -45,4 +45,4 @@ Shop ID is 2, Price is 5.0
 1. This system is capable to separate any wired csv fiel. 
 2. As my exmas are going I have done it for single product. To take multiple input of product name, put input under while loop and run it until user says "No" to another input
 3. Store input into array, compare it with array generated out of arrayList, take shop id and sum of their price 
-4. After completing my today's exam I will be able to finish it. 
+
