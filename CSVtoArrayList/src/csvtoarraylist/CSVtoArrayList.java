@@ -1,8 +1,5 @@
 
 
-package csvtoarraylist;
-
-
 /**
  *
  * @author Yash Kotadia
@@ -24,25 +21,24 @@ public class CSVtoArrayList {
             System.out.println("Enter Product Name:");
             String PRname = in.next();    
            
-		BufferedReader crunchifyBuffer = null;
+		BufferedReader Buffer = null;
 		
 		try {
-			String crunchifyLine;
-			crunchifyBuffer = new BufferedReader(new FileReader(name));
+			String Line;
+			Buffer = new BufferedReader(new FileReader(name));
 			
-			// How to read file in java line by line?
-			while ((crunchifyLine = crunchifyBuffer.readLine()) != null) {
-				//System.out.println("Raw CSV data: " + crunchifyLine);
-				//System.out.println("Converted ArrayList data: " + crunchifyCSVtoArrayList(crunchifyLine) + "\n");
-                                crunchifyCSVtoArrayList(crunchifyLine,PRname);
+			// read file line by line
+			while ((Line = Buffer.readLine()) != null) {
+				//System.out.println("Raw CSV data: " + Line);
+				//System.out.println("Converted ArrayList data: " + CSVtoArrayList(Line) + "\n");
+                                CSVtoArrayList(Line,PRname);
                         }
-                        
-			
+						
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
 			try {
-				if (crunchifyBuffer != null) crunchifyBuffer.close();
+				if (Buffer != null) Buffer.close();
 			} catch (IOException crunchifyException) {
 				crunchifyException.printStackTrace();
 			}
@@ -50,43 +46,36 @@ public class CSVtoArrayList {
 	}
 	        
 	// Utility which converts CSV to ArrayList using Split Operation
-	public static ArrayList<String> crunchifyCSVtoArrayList(String crunchifyCSV, String ProductName) {
-		ArrayList<String> crunchifyResult = new ArrayList<String>();
-		if (crunchifyCSV != null) {
-			String[] splitData = crunchifyCSV.split("\\s*,\\s*");
+	public static ArrayList<String> CSVtoArrayList(String CSV, String ProductName) {
+		ArrayList<String> Result = new ArrayList<String>();
+		if (CSV != null) {
+			String[] splitData = CSV.split("\\s*,\\s*");
                         
 			for (int i = 0; i < splitData.length; i++) {
 				if (!(splitData[i] == null) || !(splitData[i].length() == 0)) {
-					crunchifyResult.add(splitData[i].trim());           
+					Result.add(splitData[i].trim());           
 				}
-                                       
-                                if(i>=2)
+				if(i>=2)
                                 {
-                                    String array[] = new String[crunchifyResult.size()];              
-                                    
-                                    for(int j =0;j<crunchifyResult.size();j++)
+                                    String array[] = new String[Result.size()];              
+                                    for(int j =0;j<Result.size();j++)
                                     {
-                                        array[j] = crunchifyResult.get(j);
+                                        array[j] = Result.get(j);
                                         if(ProductName.equals(array[j]))
                                         {
                                             System.out.println("Shop Id is " + array[0]);
                                             float result = Float.parseFloat(array[1]);   
-                                            System.out.println(result);   
-                                        }
-                                    }
+                                            System.out.println("Price is "+result);
+					     System.out.println("");
+                                        }	
+                                    }							
                                     //Displaying Array elements
                                     /*for(String k: array)
                                     {
                                     System.out.println(k);
                                     }*/
-                        }
-                        
-		}
-		return crunchifyResult ;
-	}
-            return null;
-	     
-        
-        }
-        
+				}
+			}return Result ;
+		}return null;
+    }
 }
