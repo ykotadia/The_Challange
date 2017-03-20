@@ -1,7 +1,7 @@
-5# The_Challange_DataOne_Innovation_Labs
+# The_Challange_DataOne_Innovation_Labs
 
 
-#How to Run CSVtoArrayList.java?
+# How to Run CSVtoArrayList.java?
 
 1. You Need to have JAVA installed in your computer
 2. Download this repository, Extract it.
@@ -10,7 +10,7 @@
 5. javac CSVtoArrayList.java
 6. java CSVtoArrayList
 
-#Input
+# Input
 
 1. It will ask to give path for csv file, give full to csv file you want to read.
     
