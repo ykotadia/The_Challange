@@ -22,11 +22,9 @@
    
 # output
 
-Shop ID is 1
-Price is 4.0 
+Shop ID is 1, Price is 4.0 
 
-Shop ID is 2
-Price is 5.0
+Shop ID is 2, Price is 5.0
 
 # How it Works?
 
